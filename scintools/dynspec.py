@@ -159,7 +159,7 @@ class Dynspec:
         if verbose:
             print("LOADING {0}...".format(filename))
         head = []
-        with open(filename, "r") as file:
+        with open(filename, "r", encoding='utf-8') as file:
             for line in file:
                 if line.startswith("#"):
                     headline = str.strip(line[1:])
@@ -234,7 +234,7 @@ class Dynspec:
         else:
             fname = filename
         # now write to file
-        with open(fname, 'w') as fn:
+        with open(fname, 'w', encoding='utf-8') as fn:
             fn.write("# Scintools-modified dynamic spectrum " +
                      "in psrflux format\n")
             fn.write("# Created using write_file method in Dynspec class\n")
